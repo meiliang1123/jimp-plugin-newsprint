@@ -1,6 +1,6 @@
 {
   "name": "jimp-plugin-newsprint",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "a jimp plugin for newsprint effect",
   "main": "dist/index.js",
   "scripts": {
@@ -45,6 +45,6 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    
+    "jimp-plugin-newsprint": "^1.0.2"
   }
 }

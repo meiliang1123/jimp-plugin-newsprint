@@ -36,6 +36,7 @@ module.exports = {
         "no-trailing-spaces": "error",
         "no-multi-spaces": "error",
         "comma-spacing": "error",
+        "space-infix-ops":"error",
         "no-unused-vars": "warn",
         "no-await-in-loop": 0,
         "no-loop-func": 0,

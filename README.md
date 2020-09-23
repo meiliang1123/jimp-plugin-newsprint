@@ -14,7 +14,8 @@ import configure from '@jimp/custom';
 import newsprint from "jimp-plugin-newsprint";
 configure({ plugins: [newsprint] }, Jimp);
 
-Jimp.read('some picture').newsprint()
+const img = await Jimp.read('some picture')
+img.newsprint()
 ```
 
 params

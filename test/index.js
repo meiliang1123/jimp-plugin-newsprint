@@ -9,7 +9,7 @@ async function test() {
 
     const img = await Jimp.read('./test/in.jpg');
     console.log('start');
-    img.newsprint().writeAsync('./test/out.jpg');
+    img.newsprint('line', 25).writeAsync('./test/out.jpg');
     // img.posterize(1).writeAsync('./test/out.jpg')
 
     console.log('done');

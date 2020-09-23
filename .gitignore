@@ -16,3 +16,4 @@ npm-debug.log*
 .idea/
 *.swp
 .DS_store
+test/out.jpg

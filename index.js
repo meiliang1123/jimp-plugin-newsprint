@@ -49,8 +49,8 @@ function spot2thresh ( type, width) {
         {
             order[i] = {};
             /* scale x & y to -1 ... +1 inclusive */
-            let sx = ((x) / (width-1) - 0.5) * 2;
-            let sy = ((y) / (width-1) - 0.5) * 2;
+            let sx = ((x) / (width - 1) - 0.5) * 2;
+            let sy = ((y) / (width - 1) - 0.5) * 2;
             let val = spotfn(sx, sy);
             val = clamp(val, -1, 1); /* interval is inclusive */
 
@@ -92,7 +92,6 @@ function clamp(val, x, y) {
  */
 export default () => ({
     newsprint(cellType = 'line', cellWidth = 50, angle = -45) {
-
         let rot = angle * Math.PI / 180;
         const x1 = 0;
         const y1 = 0;
@@ -115,7 +114,7 @@ export default () => ({
                             x: x + col,
                             y:y + row
                         };
-                        let r = Math.sqrt (p1.x**2 + p1.y**2);
+                        let r = Math.sqrt (p1.x ** 2 + p1.y ** 2);
                         let theta = Math.atan2 ( (p1.y), (p1.x));
 
                         let p2 = {
@@ -130,13 +129,13 @@ export default () => ({
 
                         let idxThresh = (p2.y * cellWidth + p2.x);
 
-                        let idx = (p1.x + p1.y* this.bitmap.width) << 2;
+                        let idx = (p1.x + p1.y * this.bitmap.width) << 2;
 
-                        let val = thresh[idxThresh] || 125;
+                        let val = idxThresh < thresh.length ? thresh[idxThresh] : 0;
 
                         this.bitmap.data[idx] = this.bitmap.data[idx] > val ? 255 : 0;
-                        this.bitmap.data[idx+1] = this.bitmap.data[idx];
-                        this.bitmap.data[idx+2] = this.bitmap.data[idx];
+                        this.bitmap.data[idx + 1] = this.bitmap.data[idx];
+                        this.bitmap.data[idx + 2] = this.bitmap.data[idx];
 
                     }
                 }
